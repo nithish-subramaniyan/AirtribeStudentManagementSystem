@@ -1,7 +1,9 @@
 package com.airtribe.studentmanagement.exception;
 
 public class StudentNotFoundException extends RuntimeException {
-	public StudentNotFoundException(String msg) {
-		super(msg);
-	}
+    private static final long serialVersionUID = 1L;
+
+    public StudentNotFoundException(String msg) {
+        super(msg);
+    }
 }

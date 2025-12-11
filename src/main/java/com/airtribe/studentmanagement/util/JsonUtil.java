@@ -16,7 +16,10 @@ import com.google.gson.reflect.TypeToken;
 
 public class JsonUtil {
 	private static final JsonUtil INSTANCE = new JsonUtil();
-	private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+	// Register LocalDate adapter here
+	private final Gson gson = new GsonBuilder().registerTypeAdapter(java.time.LocalDate.class, new LocalDateAdapter())
+			.setPrettyPrinting().create();
 
 	private JsonUtil() {
 	}

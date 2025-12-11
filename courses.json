@@ -1,0 +1,16 @@
+[
+  {
+    "id": "6b9b8055-8ae1-45d4-a26e-eb798c00b855",
+    "code": "1",
+    "title": "BCOM",
+    "credits": 20,
+    "maxSeats": 10
+  },
+  {
+    "id": "99fcf126-45f1-4868-808d-ed82475230a8",
+    "code": "100",
+    "title": "Core Java",
+    "credits": 200,
+    "maxSeats": 10
+  }
+]

@@ -31,16 +31,18 @@ public class EnrollmentService {
 
 		Student s = ss.findById(studentId)
 				.orElseThrow(() -> new InvalidDataException("Student not found: " + studentId));
+
 		Course c = cs.findById(courseId).orElseThrow(() -> new InvalidDataException("Course not found: " + courseId));
 
-		// check seats
 		long enrolledCount = store.values().stream()
 				.filter(e -> e.getCourseId().equals(courseId) && "ENROLLED".equals(e.getStatus())).count();
+
 		if (enrolledCount >= c.getMaxSeats()) {
 			throw new InvalidDataException("Course full");
 		}
 
-		Enrollment e = new Enrollment(studentId, courseId);
+		Enrollment e = new Enrollment(s.getId(), c.getId());
+
 		store.put(e.getId(), e);
 		save();
 		return e;
